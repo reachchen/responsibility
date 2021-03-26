@@ -1,0 +1,8 @@
+include ':play'
+include ':sleep'
+include ':learn'
+include ':drink'
+include ':eat'
+include ':action'
+include ':app'
+rootProject.name = "ChainResponsibility"

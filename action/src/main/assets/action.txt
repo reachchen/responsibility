@@ -1,0 +1,84 @@
+{
+	"uiModelConfigs": [{
+			"actionModels": [{
+					"actionId": 1,
+					"actionName": "吃饭",
+					"nextAction": {
+						"actionId": 2,
+						"actionName": "喝茶",
+						"nextAction": {
+							"actionId": 3,
+							"actionName": "打篮球",
+							"nextAction": {
+								"actionId": 4,
+								"actionName": "睡觉"
+							}
+						}
+					}
+				},
+				{
+					"actionId": 2,
+					"actionName": "喝茶",
+					"nextAction": {
+						"actionId": 1,
+						"actionName": "吃饭",
+						"nextAction": {
+							"actionId": 3,
+							"actionName": "打篮球",
+							"nextAction": {
+								"actionId": 4,
+								"actionName": "睡觉"
+							}
+						}
+					}
+				},
+				{
+					"actionId": 3,
+					"actionName": "打篮球",
+					"nextAction": {
+						"actionId": 2,
+						"actionName": "喝茶",
+						"nextAction": {
+							"actionId": 1,
+							"actionName": "吃饭",
+							"nextAction": {
+								"actionId": 4,
+								"actionName": "睡觉"
+							}
+						}
+					}
+				},
+				{
+					"actionId": 4,
+					"actionName": "睡觉",
+					"nextAction": {
+						"actionId": 2,
+						"actionName": "喝茶",
+						"nextAction": {
+							"actionId": 1,
+							"actionName": "喝吃饭",
+							"nextAction": {
+								"actionId": 3,
+								"actionName": "打篮球"
+							}
+						}
+					}
+				}
+			],
+			"modelId": 0,
+			"modelName": "暑假模式"
+		},
+		{
+			"actionModels": [{
+				"actionId": 5,
+				"actionName": "学习",
+				"nextAction": {
+					"actionId": 2,
+					"actionName": "睡觉"
+				}
+			}],
+			"modelId": 1,
+			"modelName": "开学模式"
+		}
+	]
+}
