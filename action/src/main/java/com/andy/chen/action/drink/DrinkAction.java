@@ -60,7 +60,6 @@ public class DrinkAction extends BaseAction<DrinkBean> implements IDrinkListener
         }else{
             Log.i(logTAG(),"动作不可用");
         }
-
     }
 
     @Override

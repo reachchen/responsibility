@@ -13,6 +13,7 @@ public class Drink{
     public static IDrinkListener mListener;
 
     public static DrinkBean prepareDrink(IDrinkListener listener){
+        Log.i("DRINK","prepareDrink");
         mListener = listener;
         return new DrinkBean("红茶","","准备喝茶");
     }
