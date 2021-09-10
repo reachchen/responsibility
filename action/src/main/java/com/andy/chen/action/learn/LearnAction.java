@@ -45,12 +45,29 @@ public class LearnAction extends BaseAction<LearnBean> implements ILearnListener
     }
 
     @Override
+    public void prepareLearn() {
+
+    }
+
+    @Override
+    public void startLearn() {
+
+    }
+
+    @Override
+    public void starting() {
+
+    }
+
+    @Override
     public void learnFail() {
 
     }
 
     @Override
-    public void learnSuccess() {
+    public void learnEnd() {
 
     }
+
+
 }

@@ -46,12 +46,29 @@ public class PlayAction extends BaseAction<PlayBean> implements IPlayListener {
     }
 
     @Override
+    public void preparePlay() {
+
+    }
+
+    @Override
+    public void startPlay() {
+
+    }
+
+    @Override
+    public void isPlaying() {
+
+    }
+
+    @Override
     public void playFail() {
 
     }
 
     @Override
-    public void playSuccess() {
+    public void playEnd() {
 
     }
+
+
 }

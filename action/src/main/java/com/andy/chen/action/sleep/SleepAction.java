@@ -47,12 +47,29 @@ public class SleepAction  extends BaseAction<SleepBean> implements ISleepListene
     }
 
     @Override
+    public void prepareSleep(ISleepListener listener) {
+
+    }
+
+    @Override
+    public void startSleep() {
+
+    }
+
+    @Override
+    public void isSleeping() {
+
+    }
+
+    @Override
     public void sleepFail() {
 
     }
 
     @Override
-    public void sleepSuccess() {
+    public void sleepEnd() {
 
     }
+
+
 }
