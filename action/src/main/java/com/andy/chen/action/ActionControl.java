@@ -5,9 +5,6 @@ import android.content.Context;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
-
-import androidx.fragment.app.Fragment;
-
 import com.andy.chen.action.drink.DrinkAction;
 import com.andy.chen.action.eat.EatAction;
 import com.andy.chen.action.learn.LearnAction;
@@ -15,7 +12,6 @@ import com.andy.chen.action.play.PlayAction;
 import com.andy.chen.action.sleep.SleepAction;
 import com.andy.chen.action.util.GsonUtil;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,7 +31,6 @@ public class ActionControl implements IActionListener {
     private BaseAction runningAction;//正在执行的动作
     private IActionEventNotifyListener notifyListener;
     private UIModelBean uiModelBean;
-    private boolean enableTemp = true;//测温开关
     private boolean enableAction = true;
     private String actionJsonFileName = "action.txt";
     private ConcurrentHashMap<String,BaseAction> modelMap = new ConcurrentHashMap<>();
@@ -81,13 +76,6 @@ public class ActionControl implements IActionListener {
         UIModelBean uiModelBean = null;
         BufferedReader bufferedReader = null;
         InputStream inputStream = null;
-//        File file = new File(Environment.getExternalStorageDirectory() + File.separator + "visitorjson.txt");
-//        File file = new File(Environment.getExternalStorageDirectory() + File.separator + "visitorjsondefault.txt");
-        File file = new File(Environment.getExternalStorageDirectory() + File.separator + fileName);
-        // 文件夹不存在的话，就创建文件夹
-        if (!file.getParentFile().exists()) {
-            file.getParentFile().mkdirs();
-        }
         try {
             inputStream = context.getResources().getAssets().open(fileName);//读配置文件
 //            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
@@ -131,7 +119,6 @@ public class ActionControl implements IActionListener {
      */
     public void initActionNode(Context context,boolean enableTemp,UIModelType uiModelType){
 //        createUIModelBean(context);
-        this.enableTemp = enableTemp;
         Log.d(TAG, "initModel: "+uiModelType.modelName+" enableTemp="+enableTemp);
         if(uiModelBean == null){
             uiModelBean = readJSONObjectFromFile(context,actionJsonFileName);
@@ -162,7 +149,7 @@ public class ActionControl implements IActionListener {
                                             parentAction = action;
                                             actionConfig = actionConfig.getNextAction();
                                         }
-
+                                        Log.i(TAG,"=modelMap.put=="+actionName);
                                         modelMap.put(actionName,rootAction);
                                     }
                                 }

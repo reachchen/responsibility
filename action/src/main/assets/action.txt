@@ -56,7 +56,7 @@
 						"actionName": "喝茶",
 						"nextAction": {
 							"actionId": 1,
-							"actionName": "喝吃饭",
+							"actionName": "吃饭",
 							"nextAction": {
 								"actionId": 3,
 								"actionName": "打篮球"

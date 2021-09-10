@@ -19,11 +19,18 @@ public class Drink{
     }
 
     public static DrinkBean  drinking(){
+        mListener.isDrinking();
         return new DrinkBean("红茶","","正在喝茶");
     }
 
     public static DrinkBean  drinkEnd(){
+        mListener.drinkEnd();
         return new DrinkBean("红茶","","喝完茶了");
+    }
+
+    public static DrinkBean drinkFail(){
+        mListener.drinkFail();
+        return  new DrinkBean("红茶","","喝茶失败了");
     }
 
     public static void startDrinking(){

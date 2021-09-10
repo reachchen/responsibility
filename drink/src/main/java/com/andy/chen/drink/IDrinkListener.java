@@ -8,9 +8,19 @@ public interface IDrinkListener {
     void drinkFail();
 
     /**
-     * 起始动作为喝茶
+     * 开始喝茶
      */
     void startDrink();
+
+    /**
+     * 正在喝茶
+     */
+    void isDrinking();
+
+    /**
+     * 喝茶结束
+     */
+    void drinkEnd();
 
 
 }

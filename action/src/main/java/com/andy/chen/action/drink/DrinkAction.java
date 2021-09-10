@@ -57,6 +57,9 @@ public class DrinkAction extends BaseAction<DrinkBean> implements IDrinkListener
         setParentAction(parentAction);
         if(isActionEnable()){
             setActionWorking(true);
+            isDrinking();
+            actionListener.hasActionWorking();
+            doNextAction(this);
         }else{
             Log.i(logTAG(),"动作不可用");
         }
@@ -64,10 +67,14 @@ public class DrinkAction extends BaseAction<DrinkBean> implements IDrinkListener
 
     @Override
     public void doNextAction(BaseAction parentAction) {
+
+        Log.d(logTAG(), "doNextAction: parentAction="+parentAction);
+
         if(isNextActionEnable()){
             if(actionListener!= null){
                 actionListener.onActionEnd(this);//告知上层当前动作执行完成
             }
+            Log.i("DrinkAction","=========="+nextAction);
             if(nextAction != null){//执行下一个动作
                 nextAction.doAction(false, result,this);
             }else if(actionListener!= null){
@@ -93,5 +100,20 @@ public class DrinkAction extends BaseAction<DrinkBean> implements IDrinkListener
     @Override
     public void startDrink() {
         doAction(isRootAction,null,null);
+    }
+
+    @Override
+    public void isDrinking() {
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void drinkEnd() {
+
     }
 }

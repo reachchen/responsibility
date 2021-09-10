@@ -1,15 +1,11 @@
 package com.andy.chen.chainresponsibility;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.andy.chen.action.ActionControl;
 import com.andy.chen.drink.Drink;
-
 import static com.andy.chen.action.UIModelType.TYPE_STUDENT;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener{
